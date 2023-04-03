@@ -17,19 +17,18 @@ async function loadColors() {
     const fs2 = data.global.fontsize.fs2.value;
     const fs3 = data.global.fontsize.fs3.value;
     const fs4 = data.global.fontsize.fs4.value;
-    const fontSizeBase = data.global.fontsize.fontSizeBase.value;
-    const fontSizeParagraph = data.global.fontsize.fontSizeParagraph.value;
+    const fsRem = data.global.fontsize.fsRem.value;
     
     // CSSを動的に追加
     const style = document.createElement('style');
     style.innerHTML = `
       .primary { color: ${primaryColor}; }
       .secondary { color: ${secondaryColor}; }
-      .fs1 { font-size: ${fs1}; }
-      .fs2 { font-size: ${fs2}; }
-      .fs3 { font-size: ${fs3}; }
-      .fs4 { font-size: ${fs4}; }
-      .fontSizeParagraph { font-size: ${fontSizeParagraph}; }
+      .fs1 { font-size: ${fs1}px; }
+      .fs2 { font-size: ${fs2}px; }
+      .fs3 { font-size: ${fs3}px; }
+      .fs4 { font-size: ${fs4}px; }
+      .fsRem { font-size: ${fsRem}px; }
     `;
     document.head.appendChild(style);
   }
