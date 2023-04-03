@@ -11,6 +11,7 @@ async function loadColors() {
   
   // 色を適用する関数
   function applyColors(data) {
+    const mainFontFamily = data.global.mainFontFamily.value;
     const primaryColor = data.global.main.primaryColor.value;
     const secondaryColor = data.global.main.secondaryColor.value;
     const fs1 = data.global.fontsize.fs1.value;
@@ -18,10 +19,12 @@ async function loadColors() {
     const fs3 = data.global.fontsize.fs3.value;
     const fs4 = data.global.fontsize.fs4.value;
     const fsRem = data.global.fontsize.fsRem.value;
+    const fsSmall = data.global.fontsize.fsSmall.value;
     
     // CSSを動的に追加
     const style = document.createElement('style');
     style.innerHTML = `
+      .mainFontFamily { font-family: ${mainFontFamily}; }
       .primary { color: ${primaryColor}; }
       .secondary { color: ${secondaryColor}; }
       .fs1 { font-size: ${fs1}px; }
@@ -29,6 +32,7 @@ async function loadColors() {
       .fs3 { font-size: ${fs3}px; }
       .fs4 { font-size: ${fs4}px; }
       .fsRem { font-size: ${fsRem}px; }
+      .fsSmall { font-size: ${fsSmall}px; }
     `;
     document.head.appendChild(style);
   }
