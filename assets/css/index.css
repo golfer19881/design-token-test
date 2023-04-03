@@ -1,0 +1,13 @@
+/* style.css */
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 2em;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
